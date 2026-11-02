@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ariane Padium | Tarô, Reiki & Rituais</title>
+<meta name="description" content="Tarô online (Baralho Cigano), Reiki e rituais espirituais. / Tarot online (Baraja Gitana), Reiki y rituales espirituales.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7F9378; --sage-d:#5E7358; --sage-l:#E4EADD;
+  --blue:#27465E; --blue-l:#DCE6EC;
+  --yellow:#EBD98F; --gold:#B08D4C;
+  --cream:#FAF7F0; --paper:#FFFFFF; --ink:#26302B; --muted:#5F6A63;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--cream:#16201C;--paper:#1E2A25;--ink:#EDEFE8;--muted:#AEB8B0;--sage-l:#243029;--blue-l:#1F2D38;--blue:#A9C3D6;--sage-d:#A9BDA1}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:300 1.0625rem/1.7 var(--sans);color:var(--ink);background:var(--cream)}
+html[lang=pt] .es,html[lang=es] .pt{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--blue)}
+h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+h2{font-size:clamp(2rem,4.5vw,2.9rem);margin-bottom:1rem}
+h3{font-size:1.5rem;margin-bottom:.4rem}
+p+p{margin-top:.9rem}
+a{color:var(--sage-d)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.alt{background:var(--sage-l)}
+.lead{max-width:60ch;color:var(--muted);font-size:1.15rem}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:500 1.35rem var(--serif);color:var(--blue)}
+.flag{width:26px;height:26px;background:var(--sage);display:grid;place-items:center;border-radius:3px;flex:none}
+.flag i{width:15px;height:15px;background:var(--yellow);transform:rotate(45deg);display:grid;place-items:center}
+.flag b{width:7px;height:7px;background:var(--blue);border-radius:50%;transform:rotate(-45deg)}
+nav ul{display:flex;gap:1.3rem;list-style:none;padding:0}
+nav a{text-decoration:none;color:var(--ink);font-size:.95rem}
+nav a:hover{color:var(--sage-d)}
+.tools{display:flex;gap:.4rem;align-items:center}
+.seg{display:flex;border:1px solid var(--gold);border-radius:99px;overflow:hidden}
+.seg button{font:400 .85rem var(--sans);padding:.3rem .7rem;border:0;background:none;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--blue);color:var(--cream)}
+#menuBtn{display:none;background:none;border:1px solid var(--gold);border-radius:8px;padding:.3rem .6rem;color:var(--ink);font-size:1.1rem;cursor:pointer}
+@media(max-width:860px){
+  #menuBtn{display:block}
+  nav{position:absolute;left:0;right:0;top:64px;background:var(--cream);display:none;border-bottom:1px solid var(--gold)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;padding:1rem 1.25rem;gap:.8rem}
+}
+
+/* buttons */
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:99px;background:var(--blue);color:#fff;text-decoration:none;font-weight:400;border:1px solid var(--blue);cursor:pointer;font-family:var(--sans);font-size:1rem}
+.btn:hover{background:var(--sage-d);border-color:var(--sage-d)}
+.btn.o{background:transparent;color:var(--blue);border-color:var(--gold)}
+.btn.o:hover{background:var(--yellow);color:#26302B;border-color:var(--yellow)}
+.row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+
+/* hero */
+.hero{padding:5rem 0 4rem;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero h1 em{font-style:italic;color:var(--sage-d)}
+.hero .sig{font:400 1.05rem var(--sans);color:var(--gold);margin:.6rem 0 1.4rem;letter-spacing:.02em}
+.hero blockquote{font:italic 400 1.35rem/1.45 var(--serif);color:var(--muted);max-width:34ch;border-left:2px solid var(--yellow);padding-left:1rem}
+.portrait{aspect-ratio:3/4;border-radius:200px 200px 16px 16px;border:1px solid var(--gold)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.portrait{max-width:300px}}
+.sprig{position:absolute;right:-30px;bottom:-20px;width:260px;opacity:.18;color:var(--sage-d)}
+
+/* photo placeholders */
+.ph{background:repeating-linear-gradient(135deg,var(--sage-l),var(--sage-l) 12px,color-mix(in srgb,var(--sage-l) 70%,var(--yellow)) 12px,color-mix(in srgb,var(--sage-l) 70%,var(--yellow)) 24px);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.9rem;padding:1rem;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* grids/cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:2rem}
+.card{background:var(--paper);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:14px;padding:1.6rem}
+.card ul,.list{padding-left:1.1rem}
+.card li,.list li{margin:.3rem 0}
+.price{margin-top:1rem;font:500 1.1rem var(--sans);color:var(--sage-d)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.note{background:var(--blue-l);border-left:3px solid var(--gold);padding:1.1rem 1.3rem;border-radius:0 12px 12px 0;margin-top:1.8rem;max-width:68ch}
+.note strong{color:var(--blue)}
+
+/* timeline */
+.tl{list-style:none;padding:0;margin-top:1.5rem;border-left:2px solid var(--sage)}
+.tl li{padding:0 0 1.4rem 1.4rem;position:relative}
+.tl li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;background:var(--yellow);border:2px solid var(--sage);transform:rotate(45deg)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.4rem}
+.gal .ph{aspect-ratio:4/3;border-radius:12px}
+
+/* currency */
+.cur{display:flex;align-items:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}
+
+/* FAQ */
+details{background:var(--paper);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:12px;padding:1rem 1.3rem;margin-top:.8rem}
+summary{cursor:pointer;font:500 1.15rem var(--serif);color:var(--blue)}
+details[open] summary{margin-bottom:.5rem}
+
+/* form */
+form{display:grid;gap:.9rem;margin-top:1.2rem}
+label{font-size:.95rem}
+input,select,textarea{width:100%;font:300 1rem var(--sans);padding:.75rem .9rem;border:1px solid color-mix(in srgb,var(--gold) 60%,transparent);border-radius:10px;background:var(--paper);color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wa{position:fixed;right:1rem;bottom:1rem;z-index:20;background:#25D366;color:#0b2e1a;text-decoration:none;font-weight:500;padding:.8rem 1.2rem;border-radius:99px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+footer{padding:2.5rem 0 5rem;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap bar">
+  <a class="brand" href="#inicio"><span class="flag" aria-hidden="true"><i><b></b></i></span>Ariane Padium</a>
+  <nav id="nav" aria-label="Menu">
+    <ul>
+      <li><a href="#sobre"><span class="pt">Quem sou eu</span><span class="es">Quién soy</span></a></li>
+      <li><a href="#taro"><span class="pt">Tarô</span><span class="es">Tarot</span></a></li>
+      <li><a href="#reiki">Reiki</a></li>
+      <li><a href="#rituais"><span class="pt">Rituais</span><span class="es">Rituales</span></a></li>
+      <li><a href="#trajetoria"><span class="pt">Trajetória</span><span class="es">Trayectoria</span></a></li>
+      <li><a href="#contato"><span class="pt">Contato</span><span class="es">Contacto</span></a></li>
+      <li><a href="#faq"><span class="pt">Dúvidas</span><span class="es">Preguntas</span></a></li>
+    </ul>
+  </nav>
+  <div class="tools">
+    <div class="seg" role="group" aria-label="Idioma / Idioma">
+      <button data-lang="pt" aria-pressed="true">PT</button>
+      <button data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</div>
+</header>
+
+<main>
+<!-- INÍCIO -->
+<section class="hero" id="inicio">
+  <svg class="sprig" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M100 255C100 170 100 90 100 10"/><path d="M100 220c-40-5-60-30-65-60 40 0 62 25 65 60zM100 220c40-5 60-30 65-60-40 0-62 25-65 60zM100 160c-34-4-52-26-56-52 34 0 53 22 56 52zM100 160c34-4 52-26 56-52-34 0-53 22-56 52zM100 100c-24-3-36-18-39-36 24 0 37 15 39 36zM100 100c24-3 36-18 39-36-24 0-37 15-39 36z"/></svg>
+  <div class="wrap">
+    <div>
+      <h1><span class="pt">Um espaço de <em>conexão</em> espiritual</span><span class="es">Un espacio de <em>conexión</em> espiritual</span></h1>
+      <p class="sig">Ariane Padium | Tarô, Reiki &amp; Rituais</p>
+      <blockquote><span class="pt">Entre raízes brasileiras e caminhos chilenos, um espaço de conexão espiritual.</span><span class="es">Entre raíces brasileñas y caminos chilenos, un espacio de conexión espiritual.</span></blockquote>
+      <div class="row">
+        <a class="btn" href="#contato" data-wa="taro"><span class="pt">Agendar minha consulta online</span><span class="es">Agendar mi consulta online</span></a>
+        <a class="btn o" href="#reiki"><span class="pt">Conhecer o Reiki</span><span class="es">Conocer el Reiki</span></a>
+      </div>
+    </div>
+    <figure class="portrait ph" data-photo="Foto profissional / Foto profesional (assets/ariane-retrato.jpg)"><span class="pt">Foto profissional</span><span class="es">Foto profesional</span></figure>
+  </div>
+</section>
+
+<!-- QUEM SOU EU -->
+<section class="alt" id="sobre">
+  <div class="wrap two">
+    <figure class="ph" style="aspect-ratio:4/5;border-radius:16px" data-photo="Foto sobre mim (assets/ariane-sobre.jpg)"><span class="pt">Foto sua, natural e acolhedora</span><span class="es">Tu foto, natural y acogedora</span></figure>
+    <div>
+      <h2><span class="pt">Quem sou eu</span><span class="es">Quién soy</span></h2>
+      <p><span class="pt">Sou Ariane, brasileira e moradora do Chile. Meu trabalho reúne tarô, Reiki e rituais espirituais, sempre com respeito, escuta e cuidado com cada pessoa.</span><span class="es">Soy Ariane, brasileña residente en Chile. Mi trabajo reúne tarot, Reiki y rituales espirituales, siempre con respeto, escucha y cuidado hacia cada persona.</span></p>
+      <p><span class="pt">Atendo pessoas do Chile, do Brasil e de outros países. <!-- EDITAR: acrescente aqui sua história pessoal, em primeira pessoa. --></span><span class="es">Atiendo a personas de Chile, Brasil y otros países. <!-- EDITAR: agrega aquí tu historia personal. --></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- TARÔ -->
+<section id="taro">
+  <div class="wrap">
+    <h2><span class="pt">Consultas de tarô online</span><span class="es">Consultas de tarot online</span></h2>
+    <p class="lead"><span class="pt">Consultas feitas com o Baralho Cigano (Lenormand), exclusivamente online. Uma ferramenta de orientação, reflexão e acompanhamento, que respeita sempre a autonomia de cada pessoa.</span><span class="es">Consultas realizadas con la Baraja Gitana (Lenormand), exclusivamente online. Una herramienta de orientación, reflexión y acompañamiento, que respeta siempre la autonomía de cada persona.</span></p>
+    <div class="grid">
+      <div class="card"><h3><span class="pt">Como pode ajudar</span><span class="es">Cómo puede ayudar</span></h3>
+        <ul class="pt"><li>Esclarecer dúvidas</li><li>Refletir sobre situações pessoais e emocionais</li><li>Explorar possibilidades e caminhos</li><li>Acompanhar momentos importantes</li><li>Encontrar novas perspectivas diante de decisões</li><li>Desenvolver autoconhecimento e clareza</li></ul>
+        <ul class="es"><li>Aclarar dudas</li><li>Reflexionar sobre situaciones personales y emocionales</li><li>Explorar posibilidades y caminos</li><li>Acompañar momentos importantes</li><li>Encontrar nuevas perspectivas ante decisiones</li><li>Desarrollar autoconocimiento y claridad</li></ul>
+      </div>
+      <div class="card"><h3><span class="pt">Atendimento</span><span class="es">Atención</span></h3>
+        <p><span class="pt">Somente online, quase todos os dias, conforme minha agenda. Recomendo agendar com antecedência; também posso verificar a possibilidade de uma consulta no mesmo dia.</span><span class="es">Solo online, casi todos los días, según mi agenda. Recomiendo agendar con anticipación; también puedo verificar la posibilidad de una consulta el mismo día.</span></p>
+        <p class="price" data-price="taro"></p>
+        <div class="row"><a class="btn" href="#contato" data-wa="taro"><span class="pt">Agendar minha consulta online</span><span class="es">Agendar mi consulta online</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REIKI -->
+<section class="alt" id="reiki">
+  <div class="wrap">
+    <h2>Reiki</h2>
+    <p class="lead"><span class="pt">Uma prática complementar ligada ao relaxamento, ao bem-estar e à tranquilidade. Não substitui acompanhamento médico ou psicológico.</span><span class="es">Una práctica complementaria ligada a la relajación, el bienestar y la tranquilidad. No sustituye el acompañamiento médico ni psicológico.</span></p>
+    <div class="grid">
+      <div class="card"><h3><span class="pt">No Espaço Violeta</span><span class="es">En Espacio Violeta</span></h3><p><span class="pt">Sessões presenciais, mediante agendamento.</span><span class="es">Sesiones presenciales, previa reserva.</span></p><p class="price" data-price="reiki_violeta"></p></div>
+      <div class="card"><h3><span class="pt">Na minha residência</span><span class="es">En mi domicilio</span></h3><p><span class="pt">Sessões presenciais, mediante agendamento.</span><span class="es">Sesiones presenciales, previa reserva.</span></p><p class="price" data-price="reiki_casa"></p></div>
+      <div class="card"><h3><span class="pt">À distância</span><span class="es">A distancia</span></h3><p><span class="pt">Sessão remota, de onde você estiver.</span><span class="es">Sesión remota, desde donde estés.</span></p><p class="price" data-price="reiki_dist"></p></div>
+    </div>
+    <div class="row"><a class="btn" href="#contato" data-wa="reiki"><span class="pt">Agendar uma sessão</span><span class="es">Agendar una sesión</span></a></div>
+    <div class="note"><strong><span class="pt">Formação e certificação</span><span class="es">Formación y certificación</span></strong><br><span class="pt">[EDITAR: nome do curso, instituição, ano e nível, conforme seus certificados.]</span><span class="es">[EDITAR: nombre del curso, institución, año y nivel, según tus certificados.]</span></div>
+  </div>
+</section>
+
+<!-- RITUAIS -->
+<section id="rituais">
+  <div class="wrap">
+    <h2><span class="pt">Rituais espirituais</span><span class="es">Rituales espirituales</span></h2>
+    <p class="lead"><span class="pt">Rituais voltados à prosperidade, ao bem-estar pessoal, à tranquilidade, à limpeza energética e à renovação simbólica de ciclos.</span><span class="es">Rituales orientados a la prosperidad, el bienestar personal, la tranquilidad, la limpieza energética y la renovación simbólica de ciclos.</span></p>
+    <div class="grid">
+      <div class="card"><h3><span class="pt">Prosperidade e abundância</span><span class="es">Prosperidad y abundancia</span></h3></div>
+      <div class="card"><h3><span class="pt">Calma e tranquilidade</span><span class="es">Calma y tranquilidad</span></h3></div>
+      <div class="card"><h3><span class="pt">Limpeza energética</span><span class="es">Limpieza energética</span></h3></div>
+      <div class="card"><h3><span class="pt">Corte simbólico de ciclos</span><span class="es">Corte simbólico de ciclos</span></h3></div>
+      <div class="card"><h3><span class="pt">Rituais personalizados de intenção</span><span class="es">Rituales personalizados de intención</span></h3></div>
+    </div>
+    <p class="price" data-price="rituais" style="margin-top:1.2rem"></p>
+    <div class="note"><strong><span class="pt">O que eu não faço</span><span class="es">Lo que no hago</span></strong><br><span class="pt">Não realizo amarrações amorosas, nem rituais destinados a forçar os sentimentos, a vontade ou as decisões de outra pessoa. Meu trabalho respeita a liberdade de cada um.</span><span class="es">No realizo amarres amorosos ni rituales destinados a forzar los sentimientos, la voluntad o las decisiones de otra persona. Mi trabajo respeta la libertad de cada quien.</span></div>
+  </div>
+</section>
+
+<!-- TRAJETÓRIA -->
+<section class="alt" id="trajetoria">
+  <div class="wrap">
+    <h2><span class="pt">Minha trajetória e participação em eventos</span><span class="es">Mi trayectoria y participación en eventos</span></h2>
+    <p class="lead"><span class="pt">Formação, experiência comunitária e encontros dos quais participei.</span><span class="es">Formación, experiencia comunitaria y encuentros en los que participé.</span></p>
+
+    <ul class="tl">
+      <li><h3><span class="pt">Formação e Espaço Violeta</span><span class="es">Formación y Espacio Violeta</span></h3><p><span class="pt">Minha formação em Reiki e minha trajetória no Espaço Violeta. [EDITAR: datas e detalhes confirmados]</span><span class="es">Mi formación en Reiki y mi trayectoria en Espacio Violeta. [EDITAR: fechas y detalles confirmados]</span></p></li>
+      <li><h3><span class="pt">Primeiro encontro regional de terapias complementares</span><span class="es">Primer encuentro regional de terapias complementarias</span></h3><p><span class="pt">Encontro com representantes de órgãos governamentais e de diversas iniciativas da região. O Espaço Violeta participou como instituição privada, e tenho registro fotográfico com uma representante da SEREMI de Salud del Maule. [EDITAR: data e local]</span><span class="es">Encuentro con representantes de organismos gubernamentales y de diversas iniciativas de la región. Espacio Violeta participó como institución privada, y cuento con un registro fotográfico con una representante de la SEREMI de Salud del Maule. [EDITAR: fecha y lugar]</span></p></li>
+      <li><h3><span class="pt">Encontros e atividades universitárias</span><span class="es">Encuentros y actividades universitarias</span></h3><p><span class="pt">Participação em atividades sobre terapias complementares, bem-estar e saúde. [EDITAR: instituições e datas]</span><span class="es">Participación en actividades sobre terapias complementarias, bienestar y salud. [EDITAR: instituciones y fechas]</span></p></li>
+      <li><h3><span class="pt">Experiência voluntária</span><span class="es">Experiencia voluntaria</span></h3><p><span class="pt">Reiki voluntário em contextos comunitários: instituições de saúde, escolas e espaços de acolhimento de pessoas idosas. [EDITAR: nomes e datas confirmados]</span><span class="es">Reiki voluntario en contextos comunitarios: instituciones de salud, escuelas y espacios de acogida de personas mayores. [EDITAR: nombres y fechas confirmados]</span></p></li>
+    </ul>
+
+    <div class="gal">
+      <figure class="ph" data-photo="assets/evento-seremi.jpg"><span class="pt">Foto: encontro regional</span><span class="es">Foto: encuentro regional</span></figure>
+      <figure class="ph" data-photo="assets/voluntariado-1.jpg"><span class="pt">Foto: voluntariado</span><span class="es">Foto: voluntariado</span></figure>
+      <figure class="ph" data-photo="assets/universidade.jpg"><span class="pt">Foto: atividade universitária</span><span class="es">Foto: actividad universitaria</span></figure>
+      <figure class="ph" data-photo="assets/atendimento.jpg"><span class="pt">Foto: atendimento</span><span class="es">Foto: atención</span></figure>
+    </div>
+
+    <div class="note"><strong><span class="pt">Esclarecimento</span><span class="es">Aclaración</span></strong><br><span class="pt">A participação em eventos e as fotografias com representantes de órgãos públicos não significam que a SEREMI de Salud del Maule ou qualquer outro órgão certifique, recomende ou endosse meus serviços.</span><span class="es">La participación en eventos y las fotografías con representantes de organismos públicos no implican que la SEREMI de Salud del Maule u otro organismo certifique, recomiende o respalde mis servicios.</span></div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="wrap two" style="align-items:start">
+    <div>
+      <h2><span class="pt">Contato e agendamento</span><span class="es">Contacto y agendamiento</span></h2>
+      <p><span class="pt">Pergunte sobre horários, valores e modalidades. Respondo pelo WhatsApp.</span><span class="es">Consulta por horarios, valores y modalidades. Respondo por WhatsApp.</span></p>
+      <ul class="list" style="margin-top:1rem">
+        <li><span class="pt"><b>Tarô:</b> online, quase todos os dias, com agendamento antecipado (consulta no mesmo dia, se possível).</span><span class="es"><b>Tarot:</b> online, casi todos los días, con reserva anticipada (consulta el mismo día, si es posible).</span></li>
+        <li><span class="pt"><b>Reiki presencial:</b> mediante agendamento.</span><span class="es"><b>Reiki presencial:</b> previa reserva.</span></li>
+        <li><span class="pt"><b>Reiki à distância:</b> combinado pelo WhatsApp.</span><span class="es"><b>Reiki a distancia:</b> se coordina por WhatsApp.</span></li>
+      </ul>
+      <div class="cur">
+        <span class="pt">Valores em:</span><span class="es">Valores en:</span>
+        <div class="seg" role="group" aria-label="Moeda / Moneda"><button data-cur="CLP" aria-pressed="false">CLP</button><button data-cur="BRL" aria-pressed="true">BRL</button></div>
+      </div>
+      <div class="row">
+        <a class="btn" data-wa="geral" href="#"><span class="pt">Falar no WhatsApp</span><span class="es">Hablar por WhatsApp</span></a>
+        <a class="btn o" data-ig="br" href="#" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <form id="form" class="card">
+      <div><label for="n"><span class="pt">Nome</span><span class="es">Nombre</span></label><input id="n" required autocomplete="name"></div>
+      <div><label for="s"><span class="pt">Serviço</span><span class="es">Servicio</span></label>
+        <select id="s">
+          <option value="taro"><span>Tarô online / Tarot online</span></option>
+          <option value="reiki">Reiki</option>
+          <option value="rituais">Rituais / Rituales</option>
+          <option value="outro">Outro / Otro</option>
+        </select></div>
+      <div><label for="m"><span class="pt">Mensagem</span><span class="es">Mensaje</span></label><textarea id="m" required></textarea></div>
+      <button class="btn" type="submit"><span class="pt">Enviar pelo WhatsApp</span><span class="es">Enviar por WhatsApp</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <h2><span class="pt">Perguntas frequentes</span><span class="es">Preguntas frecuentes</span></h2>
+    <details><summary><span class="pt">As consultas de tarô são presenciais?</span><span class="es">¿Las consultas de tarot son presenciales?</span></summary><p><span class="pt">Não. Todas são online, com o Baralho Cigano (Lenormand).</span><span class="es">No. Todas son online, con la Baraja Gitana (Lenormand).</span></p></details>
+    <details><summary><span class="pt">Posso ser atendido no mesmo dia?</span><span class="es">¿Puedo ser atendido el mismo día?</span></summary><p><span class="pt">Recomendo agendar com antecedência, mas posso verificar a disponibilidade para o mesmo dia.</span><span class="es">Recomiendo agendar con anticipación, pero puedo verificar disponibilidad para el mismo día.</span></p></details>
+    <details><summary><span class="pt">O tarô prevê o futuro de forma definitiva?</span><span class="es">¿El tarot predice el futuro de forma definitiva?</span></summary><p><span class="pt">Não. É uma ferramenta de reflexão e orientação; as decisões continuam sendo suas.</span><span class="es">No. Es una herramienta de reflexión y orientación; las decisiones siguen siendo tuyas.</span></p></details>
+    <details><summary><span class="pt">O Reiki substitui tratamento médico?</span><span class="es">¿El Reiki sustituye un tratamiento médico?</span></summary><p><span class="pt">Não. É uma prática complementar de relaxamento e bem-estar. Mantenha seu acompanhamento profissional de saúde.</span><span class="es">No. Es una práctica complementaria de relajación y bienestar. Mantén tu acompañamiento profesional de salud.</span></p></details>
+    <details><summary><span class="pt">Você faz amarrações amorosas?</span><span class="es">¿Haces amarres amorosos?</span></summary><p><span class="pt">Não. Não realizo rituais para forçar sentimentos, vontade ou decisões de outra pessoa.</span><span class="es">No. No realizo rituales para forzar sentimientos, voluntad o decisiones de otra persona.</span></p></details>
+    <details><summary><span class="pt">Como pago, se estou no Brasil ou no Chile?</span><span class="es">¿Cómo pago si estoy en Brasil o Chile?</span></summary><p><span class="pt">Os valores são informados em reais ou pesos chilenos. As formas de pagamento são combinadas pelo WhatsApp. [EDITAR]</span><span class="es">Los valores se informan en reales o pesos chilenos. Las formas de pago se coordinan por WhatsApp. [EDITAR]</span></p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="y"></span> Ariane Padium | Tarô, Reiki &amp; Rituais</p>
+    <p><span class="pt">Os serviços têm caráter de orientação e bem-estar e não substituem atendimento médico, psicológico ou jurídico.</span><span class="es">Los servicios tienen carácter de orientación y bienestar y no sustituyen atención médica, psicológica ni jurídica.</span></p>
+  </div>
+</footer>
+
+<a class="wa" data-wa="geral" href="#" aria-label="WhatsApp">WhatsApp</a>
+
+<script>
+/* ============ EDITE AQUI ============ */
+const CONFIG = {
+  whatsapp: "",            // ex.: "56912345678" (código do país + número, sem + nem espaços)
+  instagramBR: "",         // ex.: "https://instagram.com/seu_usuario_br"
+  instagramCL: "",         // ex.: "https://instagram.com/seu_usuario_cl"
+  // Preços: deixe null até confirmar. Ex.: { CLP: 25000, BRL: 150 }
+  prices: {
+    taro:          { CLP: null, BRL: null },
+    reiki_violeta: { CLP: null, BRL: null },
+    reiki_casa:    { CLP: null, BRL: null },
+    reiki_dist:    { CLP: null, BRL: null },
+    rituais:       { CLP: null, BRL: null }
+  }
+};
+/* ==================================== */
+
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const root = document.documentElement;
+const save = (k,v) => { try{ localStorage.setItem(k,v) }catch(e){} };
+const load = k => { try{ return localStorage.getItem(k) }catch(e){ return null } };
+
+/* Idioma: preferência salva > idioma do navegador > fuso horário */
+function detectLang(){
+  const saved = load("lang"); if(saved) return saved;
+  const nav = (navigator.languages && navigator.languages[0] || navigator.language || "").toLowerCase();
+  if(nav.startsWith("pt")) return "pt";
+  if(nav.startsWith("es")) return "es";
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+  if(/Santiago|Punta_Arenas/.test(tz)) return "es";
+  if(/Sao_Paulo|Bahia|Fortaleza|Recife|Manaus|Belem/.test(tz)) return "pt";
+  return "pt";
+}
+let lang = detectLang(), cur = load("cur") || (lang === "es" ? "CLP" : "BRL");
+
+const T = {
+  pt:{ask:"Valor sob consulta", msg:"Olá, Ariane! ", hello:"Olá, Ariane! Gostaria de saber mais sobre seus atendimentos.", ph:{taro:"Tarô online",reiki:"Reiki",rituais:"Rituais",outro:"outro atendimento"}, via:"Tenho interesse em: "},
+  es:{ask:"Valor a consultar", msg:"¡Hola, Ariane! ", hello:"¡Hola, Ariane! Me gustaría saber más sobre tus atenciones.", ph:{taro:"Tarot online",reiki:"Reiki",rituais:"Rituales",outro:"otra atención"}, via:"Me interesa: "}
+};
+
+function money(v){
+  if(v == null) return T[lang].ask;
+  return new Intl.NumberFormat(cur==="CLP"?"es-CL":"pt-BR",{style:"currency",currency:cur,maximumFractionDigits:0}).format(v);
+}
+function render(){
+  root.lang = lang;
+  $$("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  $$("[data-cur]").forEach(b => b.setAttribute("aria-pressed", b.dataset.cur === cur));
+  $$("[data-price]").forEach(el => { const p = CONFIG.prices[el.dataset.price]; el.textContent = money(p && p[cur]); });
+  const ig = lang === "es" ? CONFIG.instagramCL : CONFIG.instagramBR;
+  $$("[data-ig]").forEach(a => { a.href = ig || CONFIG.instagramBR || CONFIG.instagramCL || "#"; });
+  $$("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); });
+}
+function waLink(kind, text){
+  const t = text || (kind && kind !== "geral" ? T[lang].msg + T[lang].via + T[lang].ph[kind] + "." : T[lang].hello);
+  return CONFIG.whatsapp ? "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(t) : "#contato";
+}
+
+$$("[data-lang]").forEach(b => b.onclick = () => { lang = b.dataset.lang; save("lang", lang); cur = lang==="es" ? "CLP":"BRL"; save("cur",cur); render(); });
+$$("[data-cur]").forEach(b => b.onclick = () => { cur = b.dataset.cur; save("cur", cur); render(); });
+
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const n = $("#n").value.trim(), s = $("#s").value, m = $("#m").value.trim();
+  const text = T[lang].msg + (lang==="es"?"Soy ":"Sou ") + n + ". " + T[lang].via + T[lang].ph[s] + ". " + m;
+  if(!CONFIG.whatsapp){ alert(lang==="es" ? "WhatsApp aún no configurado." : "WhatsApp ainda não configurado."); return; }
+  window.open(waLink(null, text), "_blank", "noopener");
+});
+
+/* Fotos: troque os blocos .ph por <img> quando tiver as imagens em /assets */
+$$(".ph[data-photo]").forEach(f => {
+  const src = f.dataset.photo; if(!/\.(jpe?g|png|webp)$/i.test(src)) return;
+  const img = new Image(); img.alt = ""; img.loading = "lazy";
+  img.onload = () => { f.textContent = ""; f.appendChild(img); };
+  img.src = src;
+});
+
+const btn = $("#menuBtn"), nav = $("#nav");
+btn.onclick = () => { const o = nav.classList.toggle("open"); btn.setAttribute("aria-expanded", o); };
+$$("#nav a").forEach(a => a.onclick = () => nav.classList.remove("open"));
+$("#y").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
